@@ -1,0 +1,20 @@
+{
+  "color": [
+    {
+      "name": "color_1",
+      "value": "#ff0000"
+    },
+    {
+      "name": "lineColor_click",
+      "value": "#1296db"
+    },
+    {
+      "name": "lineColor_unclick",
+      "value": "#9b9b9b"
+    },
+    {
+      "name": "cursor_default",
+      "value": "#00FF00"
+    }
+  ]
+}

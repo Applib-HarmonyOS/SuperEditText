@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SuperEditText.iml" filepath="$PROJECT_DIR$/SuperEditText.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/diy_view/diy_view.iml" filepath="$PROJECT_DIR$/diy_view/diy_view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SuperEditText.iml" filepath="$PROJECT_DIR$/.idea/modules/SuperEditText.iml" group="SuperEditText" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/diy_view/diy_view.iml" filepath="$PROJECT_DIR$/.idea/modules/diy_view/diy_view.iml" group="SuperEditText/diy_view" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/entry/entry.iml" filepath="$PROJECT_DIR$/.idea/modules/entry/entry.iml" group="SuperEditText/entry" />
     </modules>
   </component>
 </project>
