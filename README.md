@@ -35,7 +35,7 @@ A simple and easy-to-use custom EditText (including one-click delete & custom st
 #### Set Animation Attributes
 - Attributes Description
 
-<img src="screenshots/Table.png" width="1056">
+<img src="screenshots/Table.png" width="3056">
 
 ### ability_main.xml
 ```xml
