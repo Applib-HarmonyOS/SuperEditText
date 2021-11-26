@@ -18,8 +18,8 @@ A simple and easy-to-use custom EditText (including one-click delete & custom st
 ```groovy
 	dependencies {
 		implementation project(':diy_view')
-        implementation fileTree(dir: 'libs', include: ['*.har'])
-        testImplementation 'junit:junit:4.13'
+                implementation fileTree(dir: 'libs', include: ['*.har'])
+                testImplementation 'junit:junit:4.13'
 	}
 ```
 2. For using diy_view in separate application using har file, add the har file in the entry/libs folder and add the dependencies in entry/build.gradle file.
@@ -42,21 +42,21 @@ A simple and easy-to-use custom EditText (including one-click delete & custom st
 <scut.carsonho.diyview.SuperEditText
     ohos:width="200vp"
     ohos:height="match_content"
-    app:ic_left_click="33554444" //  Set the icon on the left
-    app:ic_left_unclick="33554445" //  Set the icon on the left
+    app:ic_left_click="33554444" 
+    app:ic_left_unclick="33554445" 
     app:left_x="0"
     app:left_y="0"
     app:left_width="60"
     app:left_height="60"
-    app:ic_delete="33554443" // Set delete icon
+    app:ic_delete="33554443" 
     app:delete_x="0"
     app:delete_y="0"
     app:delete_width="80"
     app:delete_height="80"
-    app:lineColor_click="$color:colorfocus" // Set the dividing line
-    app:lineColor_unclick="$color:colorDeafult" // Set the dividing line
+    app:lineColor_click="$color:colorfocus" 
+    app:lineColor_unclick="$color:colorDeafult" 
     app:linePosition="1"
-    app:cursor="$color:colorfocus" // Set cursor
+    app:cursor="$color:colorfocus" 
     ohos:text_size="20fp"
     ohos:text_color="$color:cursor_color"
     />
