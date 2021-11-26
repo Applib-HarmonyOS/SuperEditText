@@ -11,7 +11,7 @@ A simple and easy-to-use custom EditText (including one-click delete & custom st
 - Easy to use
 - Secondary Programming costs are low
 
-<img src="screenshots/SuperEditText.gif" width="956">
+<img src="screenshots/SuperEditText.gif" width="256">
 
 ## Dependency
 1. For using diy_view module in sample app, include the source code and add the below dependencies in entry/build.gradle to generate hap/support.har.
@@ -35,7 +35,7 @@ A simple and easy-to-use custom EditText (including one-click delete & custom st
 #### Set Animation Attributes
 - Attributes Description
 
-<img src="screenshots/Table.png" width="256">
+<img src="screenshots/Table.png" width="856">
 
 ### ability_main.xml
 ```xml
