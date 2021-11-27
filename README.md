@@ -1,6 +1,6 @@
-# Super_EditText
+# SuperEditText
 
-A HMOS library which provides a simple & useful DIY View for EditText
+A HMOS library which provides SuperEditText with one-click delete feature & custom styles
 
 ## Source
 Inspired by [Carson-Ho/SuperEditText](https://github.com/Carson-Ho/SuperEditText)
@@ -63,4 +63,4 @@ A simple and easy-to-use custom EditText (including one-click delete & custom st
 ```
 
 ## License
-Super_EditText is available under the MIT license.
+SuperEditText is available under the MIT license.

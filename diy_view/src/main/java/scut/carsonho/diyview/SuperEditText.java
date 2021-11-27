@@ -35,7 +35,7 @@ import java.util.Optional;
  */
 public class SuperEditText extends TextField implements TextObserver,
         FocusChangedListener, TouchEventListener, DrawTask {
-    private static final HiLogLabel HILOG_LABEL1 = new HiLogLabel(0, 0, "SuperEditText");
+    private static final HiLogLabel HILOG_LABEL = new HiLogLabel(0, 0, "SuperEditText");
 
     /*
      * Define attribute variables
@@ -43,34 +43,12 @@ public class SuperEditText extends TextField implements TextObserver,
     // Brush
     private Paint mPaint;
 
-    // Delete icon resource ID
-    int icdeleteResId;
-
     // Delete icon
     private Element icdelete;
-
-    // The starting point of the Delete icon (x,y), the width and height of the Delete icon (px)
-    int deletex;
-    int deletey;
-    int deletewidth;
-    int deleteheight;
-
-    // Icon resource ID on the left (click & no click)
-    int icleftclickResId;
-    int icleftunclickResId;
 
     // Icon on the left (clicked & not clicked)
     private Element icleftclick;
     private Element icleftunclick;
-
-    //  The starting point of the icon on the left (x,y), the width and height of the icon on the left (px)
-    int leftx;
-    int lefty;
-    int leftwidth;
-    int leftheight;
-
-    // Cursor
-    int cursor;
 
     // Dividing line variable
     // When clicked & color not clicked
@@ -134,20 +112,17 @@ public class SuperEditText extends TextField implements TextObserver,
             // Initialize the icon on the left (clicked & not clicked)
             // a. Click the icon on the left side of the status
             // 1. Get resource ID
-            icleftclickResId = attrs.getAttr("ic_left_click").isPresent()
+            int icleftclickResId = attrs.getAttr("ic_left_click").isPresent()
                     ? attrs.getAttr("ic_left_click").get().getIntegerValue()
                     : ResourceTable.Media_ic_left_click;
             // 2. Get icon id based on getElementFromResId
             icleftclick = getElementFromResId(getContext(), icleftclickResId).get();
             // 3. Set icon size
-            leftx = AttrUtils.getIntFromAttr(attrs, "left_x", 0);
-            // 3. Set icon size
-            lefty = AttrUtils.getIntFromAttr(attrs, "left_y", 0);
-            // 3.  Set icon size
-            leftwidth = AttrUtils.getIntFromAttr(attrs, "left_width", 60);
-            // 3. Set icon size
-            leftheight = AttrUtils.getIntFromAttr(attrs, "left_height", 60);
-            // 3. Set icon size
+            //  The starting point of the icon on the left (x,y), the width and height of the icon on the left (px)
+            int leftx = AttrUtils.getIntFromAttr(attrs, "left_x", 0);
+            int lefty = AttrUtils.getIntFromAttr(attrs, "left_y", 0);
+            int leftwidth = AttrUtils.getIntFromAttr(attrs, "left_width", 60);
+            int leftheight = AttrUtils.getIntFromAttr(attrs, "left_height", 60);
             icleftclick.setBounds(leftx, lefty, leftwidth, leftheight);
             // Element.setBounds(x, y, width, height) = set the initial position, width,
             // and height information of the Element
@@ -157,27 +132,25 @@ public class SuperEditText extends TextField implements TextObserver,
 
             // b. Did not click on the icon on the left of the status
             // 1. Get resource ID
-            icleftunclickResId = attrs.getAttr("ic_left_unclick").isPresent()
+            int icleftunclickResId = attrs.getAttr("ic_left_unclick").isPresent()
                     ? attrs.getAttr("ic_left_unclick").get().getIntegerValue()
                     : ResourceTable.Media_ic_left_unclick;
             icleftunclick = getElementFromResId(getContext(), icleftunclickResId).get();
             icleftunclick.setBounds(leftx, lefty, leftwidth, leftheight);
             // Initialize delete icon
             // 1. Get resource ID
-            icdeleteResId = attrs.getAttr("ic_delete").isPresent()
+            // Delete icon resource ID
+            int icdeleteResId = attrs.getAttr("ic_delete").isPresent()
                     ? attrs.getAttr("ic_delete").get().getIntegerValue()
                     : ResourceTable.Media_delete;
             // 2. Get icon id based on getElementFromResId
             icdelete = getElementFromResId(getContext(), icdeleteResId).get();
             // 3. Set icon size
-            deletex = AttrUtils.getIntFromAttr(attrs, "delete_x", 0);
-            // 3. Set icon size
-            deletey = AttrUtils.getIntFromAttr(attrs, "delete_y", 0);
-            // 3. Set icon size
-            deletewidth = AttrUtils.getIntFromAttr(attrs, "delete_width", 60);
-            // 3. Set icon size
-            deleteheight = AttrUtils.getIntFromAttr(attrs, "delete_height", 60);
-            // 3. Set icon size
+            // The starting point of the Delete icon (x,y), the width and height of the Delete icon (px)
+            int deletex = AttrUtils.getIntFromAttr(attrs, "delete_x", 0);
+            int deletey = AttrUtils.getIntFromAttr(attrs, "delete_y", 0);
+            int deletewidth = AttrUtils.getIntFromAttr(attrs, "delete_width", 60);
+            int deleteheight = AttrUtils.getIntFromAttr(attrs, "delete_height", 60);
             icdelete.setBounds(deletex, deletey, deletewidth, deleteheight);
 
             // Set the picture on the left & right side of the EditText
@@ -196,11 +169,10 @@ public class SuperEditText extends TextField implements TextObserver,
 
             // No need to set setBounds (x, y, width, height)
             // Initialize the cursor (color & thickness)
-            // Principle: Dynamically set the cursor through the reflection mechanism
             // 1. Get resource ID
             int defaultColor = getContext().getResourceManager()
                     .getElement(ResourceTable.Color_cursor_default).getColor();
-            cursor = attrs.getAttr("cursor").isPresent()
+            int cursor = attrs.getAttr("cursor").isPresent()
                     ? attrs.getAttr("cursor").get().getColorValue().getValue() : defaultColor;
             ShapeElement shapeElement = new ShapeElement();
             shapeElement.setRgbColor(RgbColor.fromArgbInt(cursor));
@@ -232,7 +204,7 @@ public class SuperEditText extends TextField implements TextObserver,
             // Eliminate the built-in underscore
             setBackground(null);
         } catch (Exception exception) {
-            HiLog.error(HILOG_LABEL1, "SuperEditText init exception " + exception.getMessage());
+            HiLog.error(HILOG_LABEL, "SuperEditText init exception " + exception.getMessage());
         }
     }
 
@@ -248,7 +220,7 @@ public class SuperEditText extends TextField implements TextObserver,
                 Resource resource = resourceManager.getResource(resid);
                 element = prepareElement(resource);
             } catch (IOException | NotExistException e) {
-                HiLog.error(HILOG_LABEL1, "SuperEditText getElementFromResId e " + e.getMessage());
+                HiLog.error(HILOG_LABEL, "SuperEditText getElementFromResId e " + e.getMessage());
             }
         }
         return Optional.of(element.get());
@@ -275,7 +247,7 @@ public class SuperEditText extends TextField implements TextObserver,
                 ImageSource.SourceOptions srcOpts = new ImageSource.SourceOptions();
                 ImageSource imageSource = ImageSource.create(bytes, srcOpts);
                 if (imageSource == null) {
-                    HiLog.error(HILOG_LABEL1, " preparePixelMap imageSource is null ");
+                    HiLog.error(HILOG_LABEL, " preparePixelMap imageSource is null ");
                 }
                 ImageSource.DecodingOptions decodingOptions = new ImageSource.DecodingOptions();
                 decodingOptions.desiredSize = new Size(0, 0);
@@ -286,7 +258,7 @@ public class SuperEditText extends TextField implements TextObserver,
                 }
             }
         } catch (IOException e) {
-            HiLog.error(HILOG_LABEL1, " preparePixelMap, ioexception : " + e.getMessage());
+            HiLog.error(HILOG_LABEL, " preparePixelMap, ioexception : " + e.getMessage());
         }
         return Optional.ofNullable(decodePixelMap);
     }
@@ -313,7 +285,7 @@ public class SuperEditText extends TextField implements TextObserver,
                     try {
                         output.close();
                     } catch (IOException e) {
-                        HiLog.error(HILOG_LABEL1, " readBytes close output failed ");
+                        HiLog.error(HILOG_LABEL, " readBytes close output failed ");
                     }
                 }
             }
