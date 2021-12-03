@@ -13,16 +13,16 @@
         ohos:text="Login"
         ohos:text_size="60fp"/>
 
-    <scut.carsonho.diyview.SuperEditText
+        <scut.carsonho.diyview.SuperEditText
         ohos:width="400vp"
         ohos:height="match_content"
-        app:ic_left_click="33554444"
-        app:ic_left_unclick="33554445"
+        app:ic_left_click="$media:ic_left_click"
+        app:ic_left_unclick="$media:ic_left_unclick"
         app:left_x="0"
         app:left_y="0"
         app:left_width="130"
         app:left_height="130"
-        app:ic_delete="33554443"
+        app:ic_delete="$media:delete"
         app:delete_x="0"
         app:delete_y="0"
         app:delete_width="80"
@@ -38,8 +38,8 @@
     <scut.carsonho.diyview.SuperEditText
         ohos:width="400vp"
         ohos:height="match_content"
-        app:ic_left_click="33554447"
-        app:ic_left_unclick="33554448"
+        app:ic_left_click="$media:password_click"
+        app:ic_left_unclick="$media:password_unclick"
         app:left_width="130"
         app:left_height="130"
         ohos:text_size="30fp"

@@ -111,12 +111,13 @@ public class SuperEditText extends TextField implements TextObserver,
         try {
             // Initialize the icon on the left (clicked & not clicked)
             // a. Click the icon on the left side of the status
-            // 1. Get resource ID
-            int icleftclickResId = attrs.getAttr("ic_left_click").isPresent()
-                    ? attrs.getAttr("ic_left_click").get().getIntegerValue()
-                    : ResourceTable.Media_ic_left_click;
-            // 2. Get icon id based on getElementFromResId
-            icleftclick = getElementFromResId(getContext(), icleftclickResId).get();
+            // 1. Get resource ID based on getElementFromAttr
+            if (attrs.getAttr("ic_left_click").isPresent()) {
+                icleftclick = AttrUtils.getElementFromAttr(attrs, "ic_left_click");
+            } else {
+                // 2. Get icon id based on getElementFromResId
+                icleftclick = getElementFromResId(getContext(), ResourceTable.Media_ic_left_click).get();
+            }
             // 3. Set icon size
             //  The starting point of the icon on the left (x,y), the width and height of the icon on the left (px)
             int leftx = AttrUtils.getIntFromAttr(attrs, "left_x", 0);
@@ -131,20 +132,23 @@ public class SuperEditText extends TextField implements TextObserver,
             // width = the length of the component, height = the height of the component
 
             // b. Did not click on the icon on the left of the status
-            // 1. Get resource ID
-            int icleftunclickResId = attrs.getAttr("ic_left_unclick").isPresent()
-                    ? attrs.getAttr("ic_left_unclick").get().getIntegerValue()
-                    : ResourceTable.Media_ic_left_unclick;
-            icleftunclick = getElementFromResId(getContext(), icleftunclickResId).get();
+            // 1. Get resource ID based on getElementFromAttr
+            if (attrs.getAttr("ic_left_unclick").isPresent()) {
+                icleftunclick = AttrUtils.getElementFromAttr(attrs, "ic_left_unclick");
+            } else {
+                // 2. Get icon id based on getElementFromResId
+                icleftunclick = getElementFromResId(getContext(), ResourceTable.Media_ic_left_unclick).get();
+            }
             icleftunclick.setBounds(leftx, lefty, leftwidth, leftheight);
             // Initialize delete icon
             // 1. Get resource ID
-            // Delete icon resource ID
-            int icdeleteResId = attrs.getAttr("ic_delete").isPresent()
-                    ? attrs.getAttr("ic_delete").get().getIntegerValue()
-                    : ResourceTable.Media_delete;
-            // 2. Get icon id based on getElementFromResId
-            icdelete = getElementFromResId(getContext(), icdeleteResId).get();
+            // Delete icon resource ID based on getElementFromAttr
+            if (attrs.getAttr("ic_delete").isPresent()) {
+                icdelete = AttrUtils.getElementFromAttr(attrs, "ic_delete");
+            } else {
+                // 2. Get icon id based on getElementFromResId
+                icdelete = getElementFromResId(getContext(), ResourceTable.Media_delete).get();
+            }
             // 3. Set icon size
             // The starting point of the Delete icon (x,y), the width and height of the Delete icon (px)
             int deletex = AttrUtils.getIntFromAttr(attrs, "delete_x", 0);

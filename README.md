@@ -40,26 +40,26 @@ A simple and easy-to-use custom EditText (including one-click delete & custom st
 ### ability_main.xml
 ```xml
 <scut.carsonho.diyview.SuperEditText
-    ohos:width="200vp"
-    ohos:height="match_content"
-    app:ic_left_click="33554444" 
-    app:ic_left_unclick="33554445" 
-    app:left_x="0"
-    app:left_y="0"
-    app:left_width="60"
-    app:left_height="60"
-    app:ic_delete="33554443" 
-    app:delete_x="0"
-    app:delete_y="0"
-    app:delete_width="80"
-    app:delete_height="80"
-    app:lineColor_click="$color:colorfocus" 
-    app:lineColor_unclick="$color:colorDeafult" 
-    app:linePosition="1"
-    app:cursor="$color:colorfocus" 
-    ohos:text_size="20fp"
-    ohos:text_color="$color:cursor_color"
-    />
+        ohos:width="400vp"
+        ohos:height="match_content"
+        app:ic_left_click="$media:ic_left_click"
+        app:ic_left_unclick="$media:ic_left_unclick"
+        app:left_x="0"
+        app:left_y="0"
+        app:left_width="130"
+        app:left_height="130"
+        app:ic_delete="$media:delete"
+        app:delete_x="0"
+        app:delete_y="0"
+        app:delete_width="80"
+        app:delete_height="80"
+        app:lineColor_click="$color:colorfocus"
+        app:lineColor_unclick="$color:colorDeafult"
+        app:linePosition="1"
+        app:cursor="$color:colorfocus"
+        ohos:text_size="30fp"
+        ohos:text_color="$color:cursor_color"
+        />
 ```
 
 ## License
