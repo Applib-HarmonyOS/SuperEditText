@@ -1,0 +1,25 @@
+{
+  "app": {
+    "bundleName": "scut.carsonho.superedittext",
+    "vendor": "carsonho",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    }
+  },
+  "deviceConfig": {
+  },
+  "module": {
+    "package": "scut.carsonho.diyview",
+    "deviceType": [
+      "phone",
+      "tablet",
+      "tv"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "diy_view",
+      "moduleType": "har"
+    }
+  }
+}

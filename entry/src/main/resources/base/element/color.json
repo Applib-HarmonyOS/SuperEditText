@@ -1,0 +1,20 @@
+{
+  "color": [
+    {
+      "name": "color_1",
+      "value": "#ff0000"
+    },
+    {
+      "name": "colorDeafult",
+      "value": "#9b9b9b"
+    },
+    {
+      "name": "colorfocus",
+      "value": "#1296db"
+    },
+    {
+      "name": "cursor_color",
+      "value": "#FF0000"
+    }
+  ]
+}

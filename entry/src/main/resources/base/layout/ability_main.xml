@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout xmlns:ohos="http://schemas.huawei.com/res/ohos"
+                   xmlns:app="http://schemas.huawei.com/apk/res-auto"
+                   ohos:width="match_parent"
+                   ohos:height="match_parent"
+                   ohos:focusable_in_touch="true"
+                   ohos:orientation="vertical"
+                   ohos:alignment="horizontal_center">
+
+    <Text
+        ohos:width="match_content"
+        ohos:height="match_content"
+        ohos:text="Login"
+        ohos:text_size="60fp"/>
+
+        <scut.carsonho.diyview.SuperEditText
+        ohos:width="400vp"
+        ohos:height="match_content"
+        app:ic_left_click="$media:ic_left_click"
+        app:ic_left_unclick="$media:ic_left_unclick"
+        app:left_x="0"
+        app:left_y="0"
+        app:left_width="130"
+        app:left_height="130"
+        app:ic_delete="$media:delete"
+        app:delete_x="0"
+        app:delete_y="0"
+        app:delete_width="80"
+        app:delete_height="80"
+        app:lineColor_click="$color:colorfocus"
+        app:lineColor_unclick="$color:colorDeafult"
+        app:linePosition="1"
+        app:cursor="$color:colorfocus"
+        ohos:text_size="30fp"
+        ohos:text_color="$color:cursor_color"
+        />
+
+    <scut.carsonho.diyview.SuperEditText
+        ohos:width="400vp"
+        ohos:height="match_content"
+        app:ic_left_click="$media:password_click"
+        app:ic_left_unclick="$media:password_unclick"
+        app:left_width="130"
+        app:left_height="130"
+        ohos:text_size="30fp"
+        ohos:text_input_type="pattern_password"
+        />
+
+</DirectionalLayout>
